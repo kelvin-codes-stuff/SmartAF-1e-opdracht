@@ -11,9 +11,13 @@
             <div class="alert alert-danger" role="alert">
                 {{ session('error') }}
             </div>
-        @endif
-        
-
+    @endif
+    
+    @if (session('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
 
     <div class="upload-button">
         <a href="/upload-file" class="btn btn-primary btn-lg active" role="button">Upload een bestand</a>
@@ -44,7 +48,7 @@
             <td>{{ $file->file_description }}</td>
             <td>{{ $file->file_piority }}</td>
             <td>{{ $file->file_name }}</td>
-            <td><a href="{{ url('/images/'. $file->file_name) }}" target="_blank"><i class="material-icons">open_in_new</i></a></td>
+            <td><a href="/weergeven/{{ $file->file_name }}"><i class="material-icons">open_in_new</i></a></td>
             <td><a href="/verwijder/{{$file->file_name}}"><i class="material-icons">delete</i></a></td>
             <td><a href="/bewerk/{{$file->file_name}}"><i class="material-icons">edit</i></a></td>
 

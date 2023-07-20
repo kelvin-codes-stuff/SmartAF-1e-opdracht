@@ -8,12 +8,6 @@
     <br>
 
     <div class="file-upload">
-
-        @if (session('success'))
-            <div class="alert alert-success" role="alert">
-                {{ session('success') }}
-            </div>
-        @endif
         
         <div>
         <form action="/post-upload-file" method="POST" enctype="multipart/form-data">

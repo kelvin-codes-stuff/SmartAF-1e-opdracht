@@ -26,3 +26,5 @@ Route::get('/verwijder/{fileName}', [fileHandlerController::class, 'deleteFile']
 
 Route::get('/bewerk/{imgName}', [fileHandlerController::class, 'editFile']);
 Route::post('/post-bewerk/{imgName}', [fileHandlerController::class, 'postEditFile']);
+
+Route::get('/weergeven/{imgName}', [fileHandlerController::class, 'viewFile']);

@@ -30,14 +30,14 @@ class fileHandlerController extends Controller
             'file_piority' => $validated['piority']
         ]);
 
-        return back()->with('success', "Je hebt je bestand geuploaded! Het is geuploaded als $newImageName");
+        return redirect('/')->with('success', "Je hebt je bestand geuploaded! Het is geuploaded als $newImageName");
     }
 
     public function deleteFile(Request $request)
     {
         fileHandle::where('file_name', $request->fileName)->firstOrFail()->delete();
         Storage::delete('/images/'.$request->fileName);
-        return back();
+        return redirect('/');
     }
 
     public function editFile(Request $request)
@@ -62,5 +62,10 @@ class fileHandlerController extends Controller
         rename(base_path().'/public/images/'.$request->imgName, base_path().'/public/images/'.$validated['name']);
 
         return redirect('/bewerk/'. $validated['name']);
+    }
+
+    public function viewFile(Request $request)
+    {
+        return view('files.view', ['url' => $request->imgName, 'img_data' => fileHandle::where('file_name', $request->imgName)->firstOrFail()]);
     }
 }
