@@ -22,6 +22,7 @@
             <a href="/weergeven/{{ $img_data->file_name }}"><i class="material-icons">open_in_new</i></a>
             <a href="/verwijder/{{$img_data->file_name}}"><i class="material-icons">delete</i></a>
             <a href="/bewerk/{{$img_data->file_name}}"><i class="material-icons">edit</i></a>
+            <a href="/images/{{ $img_data->file_name }}" download="{{ $img_data->file_name }}"><i class="material-icons">download</i></a>
 
     </div>
 

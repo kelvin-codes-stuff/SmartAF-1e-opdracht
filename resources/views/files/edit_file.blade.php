@@ -38,6 +38,7 @@
                 Sla je bestand op
             </button>
 
+            <a href="/images/{{ $url }}" download="{{ $url }}">Download</a>
 
         </form>
     </div>

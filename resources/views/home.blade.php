@@ -36,6 +36,7 @@
                 <th scope="col">Open</th>
                 <th scope="col">Verwijder</th>
                 <th scope="col">Bewerk</th>
+                <th scope="col">Download</th>
 
             </tr>
         </thead>
@@ -49,8 +50,9 @@
             <td>{{ $file->file_piority }}</td>
             <td>{{ $file->file_name }}</td>
             <td><a href="/weergeven/{{ $file->file_name }}"><i class="material-icons">open_in_new</i></a></td>
-            <td><a href="/verwijder/{{$file->file_name}}"><i class="material-icons">delete</i></a></td>
-            <td><a href="/bewerk/{{$file->file_name}}"><i class="material-icons">edit</i></a></td>
+            <td><a href="/verwijder/{{ $file->file_name }}"><i class="material-icons">delete</i></a></td>
+            <td><a href="/bewerk/{{ $file->file_name }}"><i class="material-icons">edit</i></a></td>
+            <td><a href="/images/{{ $file->file_name }}" download="{{ $file->file_name }}"><i class="material-icons">download</i></a></td>
 
             </tr>
 
